@@ -6,6 +6,7 @@
     "build": "npm-run-all --sequential build:*",
     "build:remix": "remix build",
     "build:server": "esbuild --platform=node --format=cjs ./server.ts --outdir=build --bundle --external:fsevents",
+    "db":"psql remix_postgres",
     "dev": "npm-run-all --parallel dev:*",
     "dev:remix": "remix dev --manual -c \"node --require ./mocks --watch-path ./build/server.js --watch ./build/server.js\"",
     "dev:server": "cross-env NODE_ENV=development npm run build:server -- --watch",
